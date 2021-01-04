@@ -1,0 +1,22 @@
+name: ci-test2
+
+on: push
+
+jobs:
+  build:
+    name: build2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - run: echo build
+
+  test:
+    name: test2
+    runs-on: ubuntu-latest
+    needs: [build2]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - run: echo hello world
