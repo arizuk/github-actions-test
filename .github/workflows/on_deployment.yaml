@@ -4,5 +4,6 @@ on: deployment
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    name: deploy to ${{ github.event.deployment.environment }} task=${{ github.event.deployment.task }}
     steps:
-      - run: echo deployment done
+      - run: echo deployment
