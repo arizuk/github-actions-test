@@ -1,4 +1,4 @@
-name: ci-test2
+name: with job dependency
 
 on: push
 
