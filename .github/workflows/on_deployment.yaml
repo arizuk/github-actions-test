@@ -5,4 +5,4 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: deployment done
+      - run: echo deployment done
