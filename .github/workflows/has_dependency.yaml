@@ -31,3 +31,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: echo deploy
+    environment:
+      name: test-env
+      url: https://arizuk.github.io/
