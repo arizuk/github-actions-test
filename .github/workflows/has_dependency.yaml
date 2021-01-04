@@ -9,7 +9,6 @@ jobs:
     name: build2
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - run: echo build
 
   test2:
@@ -17,14 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build2]
     steps:
-      - uses: actions/checkout@v2
       - run: echo hello
 
   lint:
     name: lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - run: echo lint
   
   deploy:
@@ -33,4 +30,4 @@ jobs:
     needs: [lint, test2]
     steps:
       - uses: actions/checkout@v2
-      - run: deploy
+      - run: echo deploy
