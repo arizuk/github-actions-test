@@ -24,7 +24,7 @@ jobs:
     steps:
       - run: echo lint
   
-  deploy:
+  deploy_test:
     name: deploy
     runs-on: ubuntu-latest
     needs: [lint, test2]
@@ -33,4 +33,15 @@ jobs:
       - run: echo deploy
     environment:
       name: test-env
+      url: https://arizuk.github.io/
+
+  deploy_prod:
+    name: deploy
+    runs-on: ubuntu-latest
+    needs: [lint, test2]
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo deploy prod
+    environment:
+      name: prod-env
       url: https://arizuk.github.io/
