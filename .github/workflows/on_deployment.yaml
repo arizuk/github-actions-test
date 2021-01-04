@@ -1,0 +1,8 @@
+name: on deployment
+
+on: deployment
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: deployment done
