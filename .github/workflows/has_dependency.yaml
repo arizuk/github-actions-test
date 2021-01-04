@@ -25,23 +25,24 @@ jobs:
       - run: echo lint
   
   deploy_test:
-    name: deploy
+    name: deploy_test
     runs-on: ubuntu-latest
     needs: [lint, test2]
     steps:
       - uses: actions/checkout@v2
-      - run: echo deploy
+      - run: echo deploy ${{ secrets.MY_SECRET }}
     environment:
       name: test-env
       url: https://arizuk.github.io/
 
+  # environment以外共有するやり方はありそう
   deploy_prod:
-    name: deploy
+    name: deploy_prod
     runs-on: ubuntu-latest
     needs: [lint, test2]
     steps:
       - uses: actions/checkout@v2
-      - run: echo deploy prod
+      - run: echo deploy ${{ secrets.MY_SECRET }}
     environment:
       name: prod-env
       url: https://arizuk.github.io/
