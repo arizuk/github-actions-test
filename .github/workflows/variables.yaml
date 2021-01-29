@@ -4,5 +4,7 @@ jobs:
   test:
     runs-on: ubuntu-latest    
     steps:
-      - run: IMAGE_TAG=${GITHUB_SHA::8}
-      - run: echo $IMAGE_TAG
+      - run: |
+          IMAGE_TAG=${GITHUB_SHA::8}
+          echo ${IMAGE_TAG}
+          echo done
