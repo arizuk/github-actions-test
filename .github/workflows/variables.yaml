@@ -1,0 +1,9 @@
+name: variables
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-latest    
+    env:
+      SHA: ${GITHUB_SHA::8}
+    steps:
+      - run: echo $SHA
