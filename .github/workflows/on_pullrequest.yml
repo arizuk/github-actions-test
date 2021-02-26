@@ -10,3 +10,5 @@ jobs:
         run: echo '${{ toJSON(github) }}'
       - name: Dump github.event.pull_request.milestone
         run: echo '${{ toJSON(github.event.pull_request.milestone) }}'
+      - name: test milestone title
+        run: test 'milestone1' = ${{ github.event.pull_request.milestone.title }}
