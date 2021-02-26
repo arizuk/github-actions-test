@@ -1,8 +1,12 @@
 name: on_pullrequest
-on: pull_request
+on: 
+  pull_request:
+    types: [opened, synchronize, edited]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo '${{ toJSON(github) }}'
-      - run: echo '${{ toJSON(github.event.pull_request.milestone) }}'
+      - name: Dump github
+        run: echo '${{ toJSON(github) }}'
+      - name: Dump github.event.pull_request.milestone
+        run: echo '${{ toJSON(github.event.pull_request.milestone) }}'
