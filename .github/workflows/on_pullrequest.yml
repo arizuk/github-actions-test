@@ -1,9 +1,10 @@
 name: on_pullrequest
 on: 
   pull_request:
-    types: [opened, synchronize, edited]
+    types: [opened, edited, labeled, reopened]
 jobs:
   check_milestone:
+    name: "Test milestone title"
     runs-on: ubuntu-latest
     steps:
       - name: Dump github
