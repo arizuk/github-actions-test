@@ -1,0 +1,13 @@
+name: 
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo ${TARGET_BRANCH}
+      - name: Fetch Target Branch
+        run: git fetch --no-tags --depth=1 origin ${TARGET_BRANCH}
